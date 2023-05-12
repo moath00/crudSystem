@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- bootstrap version 5.3.x -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- custom style -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Courses Organiser</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mx-auto my-5 text-center bg-dark text-light">Crud System</h1>
+
+        <div
+            class="courses d-flex flex-column-reverse flex-xl-row flex-lg-row flex-md-column-revese flex-sm-column-reverse">
+
+            <div
+                class="tabular col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 d-flex flex-column justify-content-start p-3">
+                <h2 class="col-12"><label class="form-label">Search for course</label></h2>
+                <input type="text" name="search" id="search"
+                    class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 form-control" onkeyup="searchCourse()">
+                <div class="delete-all pt-3 pb-5">
+                    <button class="btn btn-outline-danger" id="deleteAllCourses">delete all</button>
+                </div>
+                <table class="text-start table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>name</th>
+                            <th class="hideInSmall">category</th>
+                            <th>price</th>
+                            <th class="hideInSmall">description</th>
+                            <th class="text-center">update</th>
+                            <th class="text-center">delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="display">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="addition col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 d-flex flex-column p-3">
+                <form class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex d-flex flex-column form-group">
+
+                    
+                    <label for="courseName" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 form-label">course
+                        name</label>
+                        <div class="input-group has-validation">
+                        <input type="text" name="name"
+                            class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 form-control mb-2" id="courseName" />
+                        <div class="valid-feedback">
+                            Valid course name.
+                        </div>
+                        <div class="invalid-feedback">
+                            Invalid course name. Name must start with capital letter and length must be between 2 and 20 characters.
+                        </div>
+                    </div>
+                    
+                    <label for="courseCategory"
+                    class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 form-label">course
+                    category</label>
+                    <div class="input-group has-validation">
+                        <input type="text" name="category" id="courseCategory"
+                            class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 form-control mb-2" />
+                        <div class="valid-feedback">
+                            Valid course category.
+                        </div>
+                        <div class="invalid-feedback">
+                            Invalid course category. Category must start with capital letter and length must be between 2 and 20 characters.
+                        </div>
+                    </div>
+                    
+                    <label for="coursePrice"
+                    class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 form-label">course
+                    price</label>
+                    <div class="input-group has-validation">
+                        <input type="number" name="price" id="coursePrice"
+                            class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 form-control mb-2" />
+                        <div class="valid-feedback">
+                            Valid course price.
+                        </div>
+                        <div class="invalid-feedback">
+                            Invalid price. Valid price must be number between 0 to 9999
+                        </div>
+                    </div>
+                    
+                    <label for="courseDescription"
+                    class="col-xl-12 col-lg-12 col-col-12 col-sm-12 form-label">course
+                    description</label>
+                    <div class="input-group has-validation">
+                        <textarea type="text" name="description" id="courseDescription"
+                            class="col-12 form-control mb-2"></textarea>
+                        <div class="valid-feedback">
+                            Good description.
+                        </div>
+                        <div class="invalid-feedback">
+                            Invalid description. Valid description must be less than 100 characters long.
+                        </div>
+                    </div>
+                    <div class="buttons col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-2">
+                        <button class="col-xl-5 col-lg-5 col-md-4 col-sm-4 col-4 btn btn-primary" id="add" disabled="disabled" >Add
+                            Course</button>
+                        <button class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 btn btn-outline-secondary"
+                            id="clear">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- sweet alert 2 => Swal -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- custom javaScript -->
+    <script src="./assets/javaScript/index.js"></script>
+</body>
+
+</html>
